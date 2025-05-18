@@ -41,19 +41,98 @@ cd ev_backend
    Install MongoDB Community Server: https://www.mongodb.com/try/download/community
 
 Start MongoDB:
-
-On Windows: Use MongoDB Compass or run mongod
-
 On Mac/Linux: Run mongod in terminal
 
-Default connection URI: mongodb://localhost:27017
+##  MongoDB Setup (Windows)
 
-Get your connection string URI
+To run this project on Windows, you need to install and configure the following:
 
-Use this URI in your .env file (see below)
+###  Required Tools
 
-3. Restore MongoDB Backup
+1. **MongoDB Community Edition**
+2. **MongoDB Shell**
+3. **MongoDB Database Tools** (includes `mongorestore`)
+
+>  All tools must be downloaded and installed locally to make the app functional and to allow restoring the initial database backup.
+
+---
+
+###  Installation Instructions
+
+#### 1. **Download MongoDB Community Edition**
+
+* Download from: [https://www.mongodb.com/try/download/community](https://www.mongodb.com/try/download/community)
+* Choose the `.msi` installer
+* Install it to the default location:
+  `C:\Program Files\MongoDB\Server\6.0\`
+
+#### 2. **Download MongoDB Shell**
+
+* Download from: [https://www.mongodb.com/try/download/shell](https://www.mongodb.com/try/download/shell)
+* Unzip and place the folder at:
+  `C:\Program Files\MongoDB\Shell\`
+
+#### 3. **Download MongoDB Database Tools**
+
+* Download from: [https://www.mongodb.com/try/download/database-tools](https://www.mongodb.com/try/download/database-tools)
+* Unzip the archive and place it in:
+  `C:\Program Files\MongoDB\Tools\100\`
+
+---
+
+###  Add Environment Variables
+
+After installation, add the following paths to your **System Environment Variables**:
+
+
+1. MongoDB Shell:
+
+   ```
+   C:\Program Files\MongoDB\Shell\bin
+   ```
+
+2. MongoDB Tools:
+
+   ```
+   C:\Program Files\MongoDB\Tools\100\bin
+   ```
+
+####  How to Add to PATH:
+
+* Press `Win + S`, search for **"Environment Variables"**
+* Click **"Edit the system environment variables"**
+* In the **System Properties** window, click **"Environment Variables..."**
+* Under **System Variables**, select `Path` → click **Edit**
+* Click **New** and paste the above paths
+* Click OK on all dialogs
+
+---
+
+### Verifying Installation
+
+After setting the paths, open a new terminal and run:
+
+```bash
+mongo --version
+mongosh --version
+mongorestore --version
+```
+
+Each command should display version information without errors.
+
+---
+
+###  Restoring the Database Backup
+
+Once the tools are installed and PATH is set, restore the database:
+
+```bash
 mongorestore --uri="mongodb://localhost:27017" --db=ev_db ./ev_db
+```
+
+> Ensure that the `./ev_db` folder contains the BSON and metadata files (`.bson`, `.json`, etc.) exported from a previous MongoDB dump.
+
+Default connection URI: mongodb://localhost:27017
 
 4. Install Node.js Dependencies
    npm install
