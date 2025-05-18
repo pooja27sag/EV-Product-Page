@@ -72,3 +72,67 @@ POST /ev/create/product Add a new product
 GET /ev/getProducts/ Get product details
 
 More detailed documentation can be found in the https://documenter.getpostman.com/view/28589621/2sB2qXjhXV .
+
+
+Database Schema Overview
+
+ProductSchema
+{
+  title: String,
+  price: String,
+  emi: String,
+  description: String,
+  longDescription: String,
+  brand: String,
+  category: String,
+  primaryColor: String,
+  colors: [String],
+  kwhBattery: String,
+  kmRange: String,
+  chargingTime: String,
+  image: String,
+  variants: [VariantsSchema],
+  specifications: SpecificationSchema,
+  subscription: SubscriptionSchema
+}
+
+SpecificationSchema
+{
+  general: {
+    exShowroomPrice: String,
+    certifiedRange: String,
+    ...
+  },
+  technical: {
+    motorPowerNominalPeak: String,
+    ...
+  },
+  ...
+  features: {
+    instrumentCluster: String,
+    ...
+  },
+  warranty: {
+    vehicleWarranty: String,
+    batteryWarranty: String
+  }
+}
+
+SubscriptionSchema
+{
+  plan1: {
+    title: String,
+    data: [{ duration, subscription, deposit }]
+  },
+  plan2: {
+    title: String,
+    data: [{ duration, upto2, y3to4, y5to6, deposit }]
+  }
+}
+
+
+
+** Design Notes & Challenges **
+
+Modular schema design using embedded subdocuments like specification, variants, and subscription makes the data scalable and readable.
+MongoDB schema normalization was avoided to keep all relevant product data within a single document for faster access and easier integration.
