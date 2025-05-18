@@ -32,6 +32,6 @@ cd ev_app
    The application will run at: http://localhost:3000
 
 
-Note : at some rare case you'll get some version conflict error ,by react-show-more-text then please use below command
-npm install react-show-more-text --legacy-peer-deps
+**Note : at some rare case you'll get some version conflict error ,by react-show-more-text then please use below command
+npm install react-show-more-text --legacy-peer-deps**
 
