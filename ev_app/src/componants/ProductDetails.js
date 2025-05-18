@@ -63,7 +63,7 @@ const ProductDetails = ({ productDetails, refProp }) => {
                 >
                     <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>{" "}
-                <a href="/shop">Shop</a>{" "}
+                <a href="">Shop</a>{" "}
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -78,7 +78,7 @@ const ProductDetails = ({ productDetails, refProp }) => {
                 >
                     <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>{" "}
-                <a href="/product-category/electric-vehicle">Electric Vehicle</a>{" "}
+                <a href="">Electric Vehicle</a>{" "}
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
