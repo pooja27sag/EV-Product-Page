@@ -10,7 +10,7 @@ import { imagePath } from "../utils/IpConstantFile";
 
 const ProductDetails = ({ productDetails, refProp }) => {
     const [readMore, setReadMore] = useState(false);
-    const [displayImage, setDisplayImage] = useState(productDetails?.variants[0].image);
+    const [displayImage, setDisplayImage] = useState(productDetails?.variants[0]?.image);
     const [selectedOption, setSelectedOption] = useState("EMI");
     useEffect(() => {
         setDisplayImage(productDetails?.variants[0]?.image);
