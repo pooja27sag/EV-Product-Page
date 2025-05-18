@@ -1,0 +1,93 @@
+/** @format */
+.product-details-container {
+  border-radius: 12px;
+  padding: 20px 21.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.product-detail {
+  margin-bottom: 20px;
+}
+.product-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.product-brand,
+.product-price,
+.product-rating {
+  margin: 5px 0;
+}
+
+.slider-savings-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 10px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.calculator-container {
+  max-width: 800px; /* or 100%, whatever fits your layout */
+  margin: 0 auto;
+}
+
+/* .slider-container {
+  flex: 1 1 60%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+} */
+.slider-container {
+  flex: 0 1 60%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 500px;
+}
+/* .inline-savings-box {
+  flex: 1 1 35%;
+  background: #f5faff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  box-shadow: inset 0 0 15px #d9e9ff;
+} */
+.inline-savings-box {
+  flex: 0 1 35%;
+  background: #f5faff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  box-shadow: inset 0 0 15px #d9e9ff;
+  min-width: 250px;
+  white-space: nowrap;
+}
+.inline-savings-box h3 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #0073aa;
+}
+
+.inline-savings-box .savings-details p {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #222;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inline-savings-box .savings-details span {
+  color: #e91e63;
+  font-weight: 700;
+}
+@media (max-width: 600px) {
+  .slider-savings-row {
+    flex-wrap: wrap;
+  }
+}
