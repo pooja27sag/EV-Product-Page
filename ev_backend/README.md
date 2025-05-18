@@ -53,8 +53,7 @@ Get your connection string URI
 Use this URI in your .env file (see below)
 
 3. Restore MongoDB Backup
-
-mongorestore --uri="mongodb://localhost:27017" ./ev_db
+mongorestore --uri="mongodb://localhost:27017" --db=ev_db ./ev_db
 
 4. Install Node.js Dependencies
    npm install
