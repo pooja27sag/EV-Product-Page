@@ -107,6 +107,9 @@ const Header = () => {
                                     </svg>
                                 </a>
                             </li>
+                                                 <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+            ☰
+          </button>
                         </ul>
                     </div>
                     {/* <div className="right-group">
